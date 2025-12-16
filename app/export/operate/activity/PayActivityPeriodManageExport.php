@@ -1,0 +1,52 @@
+<?php
+
+namespace Imee\Export\Operate\Activity;
+
+use Dcat\EasyExcel\Excel;
+use Imee\Models\Config\BbcRankButtonTag;
+use Imee\Service\Operate\Activity\ActivityTaskGamePlayService;
+use Imee\Service\Operate\Payactivity\PayActivityPeriodManageService;
+
+class PayActivityPeriodManageExport
+{
+    public static function export($filePathName, $filterParams): bool
+    {
+        $headings = self::getHeader();
+        $service = new PayActivityPeriodManageService();
+
+        return Excel::export()
+            ->chunk(function (int $page) use ($filterParams, $service) {
+                // 每次获取1000条数据导入
+                $pageSize = 1000;
+
+                // 只查询前10页数据
+                if ($page > 10) {
+                    return [];
+                }
+                $data = $service->getTopUpDataList(['page' => $page, 'limit' => $pageSize] + $filterParams);
+                // 当数据库查不到值时会停止执行闭包内的逻辑
+                return $data;
+            })
+            ->headings($headings)
+            ->store($filePathName);
+    }
+
+    /**
+     * 获取表头
+     */
+    private static function getHeader(): array
+    {
+        return [
+            'act_id'     => '活动ID',
+            'act_name'   => '活动名称',
+            'time'       => '活动时间',
+            'cycle_time' => '轮次时间',
+            'uid'        => '用户uid',
+            'user_name'  => '用户名称',
+            'bid'        => '公会ID',
+            'bname'      => '公会名称',
+            'vip'        => '用户VIP等级',
+            'score'      => '分值'
+        ];
+    }
+}

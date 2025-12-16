@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./TestHelper.php"
+colors="true">
+  <testsuites>
+    <testsuite name="testunit">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+      <const name="APP_PATH" value="./app"/>
+      <const name="ENV" value="dev"/>
+      <const name="DS" value="/" />
+      <const name="ROOT" value="./"/>
+      <const name="IS_CLI" value="true"/>
+      <const name="RUNNING" value="testing"/>
+  </php>
+</phpunit>

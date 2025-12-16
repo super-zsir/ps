@@ -1,0 +1,30 @@
+[ERROR][Tue, 09 Dec 25 20:33:11 +0800][1e593f42-97ea-cf5c-13c4-f7efeaa0ae54] - /home/webroot/bms-partystar-admin-new/server/comp/nocode/llm/utils/AiLogger.php : 104 : /api/nocode/form/save，Call to undefined method Phalcon\Di::hasDefault()
+#0 /home/webroot/bms-partystar-admin-new/server/comp/nocode/llm/utils/AiLogger.php(20): Imee\Comp\Nocode\Llm\Utils\AiLogger->getUuid()
+#1 /home/webroot/bms-partystar-admin-new/server/comp/nocode/llm/utils/AiLogger.php(32): Imee\Comp\Nocode\Llm\Utils\AiLogger->__construct()
+#2 /home/webroot/bms-partystar-admin-new/server/comp/nocode/service/logic/form/SaveLogic.php(130): Imee\Comp\Nocode\Llm\Utils\AiLogger::getInstance()
+#3 /home/webroot/bms-partystar-admin-new/server/comp/nocode/service/logic/form/SaveLogic.php(60): Imee\Comp\Nocode\Service\Logic\Form\SaveLogic->generateCode()
+#4 /home/webroot/bms-partystar-admin-new/server/comp/nocode/service/logic/FormLogic.php(45): Imee\Comp\Nocode\Service\Logic\Form\SaveLogic->handle()
+#5 /home/webroot/bms-partystar-admin-new/server/comp/nocode/app/controller/FormController.php(42): Imee\Comp\Nocode\Service\Logic\FormLogic->save(Array)
+#6 [internal function]: Imee\Controller\Nocode\FormController->saveAction()
+#7 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(Imee\Controller\Nocode\FormController), 'saveAction', Array)
+#8 [internal function]: Phalcon\Dispatcher->dispatch()
+#9 /home/webroot/bms-partystar-admin-new/server/app/ImeeApplication.php(51): Phalcon\Mvc\Application->handle()
+#10 /home/webroot/bms-partystar-admin-new/server/app/ImeeApplication.php(31): ImeeApplication->init()
+#11 /home/webroot/bms-partystar-admin-new/server/index.php(34): ImeeApplication->run()
+#12 {main}
+[ERROR][Wed, 10 Dec 25 11:03:45 +0800][2c183fc9-0007-f639-ef1e-ca2751f1d909][Cli] - [/main][] /Users/zhangbingyang/home/webroot/bms-partystar-admin-new/server/cli.php : 41 : MainTask handler class cannot be loaded
+#0 [internal function]: Phalcon\Cli\Dispatcher->_throwDispatchException('MainTask handle...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /Users/zhangbingyang/home/webroot/bms-partystar-admin-new/server/cli.php(41): Phalcon\Cli\Console->handle(Array)
+#3 /Users/zhangbingyang/home/webroot/bms-partystar-admin-new/server/comp/nocode/test_codegen.php(3): require_once('/Users/zhangbin...')
+#4 {main}
+[ERROR][Mon, 15 Dec 25 18:08:13 +0800][b7c3a3a4-9a7e-12e0-f849-714f37ce8479] - /home/webroot/bms-partystar-admin-new/server/app/controller/operate/playing/LuckyqqlevelfirstchargeController.php : 30 : /api/lesscode/index/list?guid=luckyqqlevelfirstcharge，Undefined class constant 'BUSINESS_TYPE_LUCKY77'
+#0 [internal function]: Imee\Controller\Operate\Playing\LuckyqqlevelfirstchargeController->onConstruct()
+#1 [internal function]: Phalcon\Mvc\Controller->__construct()
+#2 [internal function]: Phalcon\Di->get('Imee\\Controller...', NULL)
+#3 [internal function]: Phalcon\Di->getShared('Imee\\Controller...')
+#4 [internal function]: Phalcon\Dispatcher->dispatch()
+#5 /home/webroot/bms-partystar-admin-new/server/app/ImeeApplication.php(51): Phalcon\Mvc\Application->handle()
+#6 /home/webroot/bms-partystar-admin-new/server/app/ImeeApplication.php(31): ImeeApplication->init()
+#7 /home/webroot/bms-partystar-admin-new/server/index.php(34): ImeeApplication->run()
+#8 {main}
